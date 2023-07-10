@@ -7,6 +7,9 @@ TagManager:
   - ItemSpawn
   - Button
   - Menu
+  - Junta
+  - PecaRobo
+  - Car
   layers:
   - Default
   - TransparentFX
