@@ -1,53 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class JuntarPecas : MonoBehaviour
 {
-    public Transform jointPoint; // Ponto de junção dos objetos
+    public string tipoDaPeca;
+    private FixedJoint joint;
 
-    private bool isColliding = false; // Verifica se está ocorrendo colisão
-    private bool isJoined = false; // Verifica se os objetos estão juntos
+    [SerializeField] private bool isJunto = false;
 
-    private void Update()
+    private readonly HashSet<string> tagsJuntas = new()
     {
-        if (isColliding && !isJoined)
+        "JuntaHead", "JuntaArmEsq", "JuntaArmDir", "JuntaLegEsq", "JuntaLegDir"
+    };
+
+    private void JuntarPeca(Collision collision)
+    {
+        Rigidbody otherRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+        if (otherRigidbody != null)
         {
-            // Verifica se os objetos estão colidindo e ainda não estão juntos
-
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            ControlRobot conexaoJunta = collision.gameObject.GetComponent<ControlRobot>();
+            Debug.Log(conexaoJunta);
+            Debug.Log(conexaoJunta.PodeConectar(tipoDaPeca));
+            
+            if (conexaoJunta != null && conexaoJunta.PodeConectar(tipoDaPeca) && isJunto == false)
             {
-                // Verifica se um toque foi detectado
+                Transform pai = collision.transform;
 
-                // Move o objeto atual para o ponto de junção
-                transform.position = jointPoint.position;
-                transform.rotation = jointPoint.rotation;
+                Transform meuTransform = transform;
 
-                // Define o objeto atual como filho do ponto de junção
-                transform.SetParent(jointPoint);
+                meuTransform.parent = pai.parent;
+                meuTransform.position = collision.transform.position;
+                meuTransform.rotation = Quaternion.Euler(pai.rotation.x, pai.rotation.y, 0f);
+                //meuTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
-                isJoined = true; // Define a flag como true para indicar que os objetos estão juntos
+                joint = meuTransform.gameObject.AddComponent<FixedJoint>();
+                joint.connectedBody = otherRigidbody;
+             
+                isJunto = true;
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        
-
-        // Verifica se ocorreu colisão com o objeto desejado
-        if (collision.gameObject.CompareTag("ObjetoDesejado"))
+        if (!isJunto && tagsJuntas.Contains(collision.gameObject.tag))
         {
-            isColliding = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        // Verifica se a colisão com o objeto desejado cessou
-        if (collision.gameObject.CompareTag("ObjetoDesejado"))
-        {
-            isColliding = false;
+            JuntarPeca(collision);
         }
     }
 }

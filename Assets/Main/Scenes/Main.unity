@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 22732921}
   m_Layer: 0
   m_Name: AR Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2231,18 +2231,18 @@ MonoBehaviour:
   objectsPrefabs:
   - {fileID: 4843176475344666103, guid: 4a1e55374896c74409cb929639897d80, type: 3}
   - {fileID: 4544780090934576046, guid: 44a1d27c31955b041b4f0a738ba9f235, type: 3}
-  - {fileID: 1256851207126924494, guid: bf460785b08468844bdfe6a0db408978, type: 3}
-  - {fileID: 3088625887710084458, guid: cbc35fba9e421d643a5a79256f87f7ba, type: 3}
+  - {fileID: 3568491442589387688, guid: b69a279f406d9e14d82440fe912f0122, type: 3}
+  - {fileID: 79368807478554459, guid: 79b0b62d861ae904bb6da0cdb0d32330, type: 3}
   - {fileID: 2186548050447483583, guid: 39cd0d1e216616444bbd7b993f8ffaae, type: 3}
-  - {fileID: 977707344051411515, guid: 5e3cd920b0eb36b49929740a2e8c7b94, type: 3}
-  - {fileID: 4977217641670348182, guid: b70235323d16fc34ea387fcef8aa60ce, type: 3}
-  - {fileID: 7700970919787361596, guid: e2b0471db85b6bf4eb7f8beeb1096851, type: 3}
-  - {fileID: 8557728067354586234, guid: 1c14395a26b4ea64586c556e1a19a456, type: 3}
-  - {fileID: 2304029176728667205, guid: 8177ec58caa817a439d819e1c9c9a653, type: 3}
-  - {fileID: 5772779447273649084, guid: e17d3275e86a6514d999f9a1d32885b3, type: 3}
-  - {fileID: 8343538880856235486, guid: 2979e5119b4661f42bb717137e94e4d3, type: 3}
-  - {fileID: 6221790443293673598, guid: 132b19dfeb2ef8246b83fe6ab1abb1ee, type: 3}
-  - {fileID: 628326384168753144, guid: aea6ba77b38038e47aa3081ba964e28e, type: 3}
+  - {fileID: 7517575371563886632, guid: 6f0fc8a39bc7f9743bf3a128177cf283, type: 3}
+  - {fileID: 3429163915650762906, guid: 1b704f7ff23697b4d840ded6fc695c6b, type: 3}
+  - {fileID: 5642744580148818081, guid: 5e553a96326b2474487db51fc6253eb9, type: 3}
+  - {fileID: 9105623307069687579, guid: e2112720ac7afb74282fbad4b4f2f8bd, type: 3}
+  - {fileID: 3847466130290496576, guid: 24ba309d13bf0924b93417d4f0d11da0, type: 3}
+  - {fileID: 6123472512770499958, guid: 51aa2d2e9b14ef24a862d29bd9ad3157, type: 3}
+  - {fileID: 7894848872834950593, guid: 2c1069ff9aa29fe4fb02680e24bb5c85, type: 3}
+  - {fileID: 8260272108590838599, guid: 38e35ba83f8e99d40b22ccef3950bff8, type: 3}
+  - {fileID: 7722186324530066144, guid: aea6ba77b38038e47aa3081ba964e28e, type: 3}
   - {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   Joystick: {fileID: 1174348029}
 --- !u!1 &463930438
@@ -3393,7 +3393,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 7e-45, z: 9.1835e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3.81e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3577,6 +3577,7 @@ GameObject:
   - component: {fileID: 782628376}
   - component: {fileID: 782628379}
   - component: {fileID: 782628380}
+  - component: {fileID: 782628381}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -3646,6 +3647,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   joystick: {fileID: 1174348031}
+--- !u!114 &782628381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e648cded87a53f047b30c80c00986c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHead: 0
+  isArmEsq: 0
+  isArmDir: 0
+  isLegDir: 0
+  isLegEsq: 0
 --- !u!1 &854905462
 GameObject:
   m_ObjectHideFlags: 0

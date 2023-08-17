@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8306874350846060203}
   - component: {fileID: 7062303578431564622}
+  - component: {fileID: 8078658279047714319}
   - component: {fileID: 952689542743260740}
   m_Layer: 0
   m_Name: Head
@@ -45,8 +46,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.31733245, y: 0.31260955, z: 0.40549442}
-  m_Center: {x: -0.003316991, y: 0.3402512, z: -0.0041597635}
+  m_Size: {x: 0.31733245, y: 0.30012712, z: 0.40549442}
+  m_Center: {x: -0.0033169985, y: 0.1442778, z: -0.0041597635}
+--- !u!54 &8078658279047714319
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544780090934576046}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1000
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!114 &952689542743260740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e7159058bc5f848b9a36b5d08519de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jointPoint: {fileID: 0}
+  tipoDaPeca: JuntaHead
 --- !u!1001 &605098029327945400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,7 +112,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 39a025f8efe08224cac4aa2c7b289659,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.093
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39a025f8efe08224cac4aa2c7b289659,
         type: 3}

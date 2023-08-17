@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7754148826432410359}
+  - component: {fileID: 6884043800509225100}
   m_Layer: 0
   m_Name: Robo
   m_TagString: ItemSpawn
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6884043800509225100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843176475344666103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4676832, y: 1.2245772, z: 0.35348856}
+  m_Center: {x: -0.01004374, y: 0.6158806, z: 0.0059862286}
 --- !u!1001 &6234392238353167956
 PrefabInstance:
   m_ObjectHideFlags: 0

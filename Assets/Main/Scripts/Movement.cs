@@ -127,6 +127,7 @@ public class Movement : MonoBehaviour
         if(placementIndicator.activeInHierarchy)
         {
             spawnObject = Instantiate(objectsPrefabs[indexObject], placementIndicator.transform.position, placementIndicator.transform.rotation);
+            //spawnObject = Instantiate(objectsPrefabs[indexObject], placementIndicator.transform.position, Quaternion.Euler(0f, 0f, 0f));
             objectsInScene.Add(spawnObject);
             placementIndicator.SetActive(false);
 
