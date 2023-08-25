@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class JuntarPecas : MonoBehaviour
@@ -15,6 +14,7 @@ public class JuntarPecas : MonoBehaviour
         "JuntaHead", "JuntaArmEsq", "JuntaArmDir", "JuntaLegEsq", "JuntaLegDir"
     };
 
+    //Juntar a peça do robo 
     private void JuntarPeca(Collision collision)
     {
         Rigidbody otherRigidbody = collision.gameObject.GetComponent<Rigidbody>();
@@ -32,8 +32,6 @@ public class JuntarPecas : MonoBehaviour
 
                 meuTransform.parent = pai.parent;
                 meuTransform.position = collision.transform.position;
-                meuTransform.rotation = Quaternion.Euler(pai.rotation.x, pai.rotation.y, 0f);
-                //meuTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
                 joint = meuTransform.gameObject.AddComponent<FixedJoint>();
                 joint.connectedBody = otherRigidbody;
@@ -43,6 +41,7 @@ public class JuntarPecas : MonoBehaviour
         }
     }
 
+    //Verificar a colisão
     void OnCollisionEnter(Collision collision)
     {
         if (!isJunto && tagsJuntas.Contains(collision.gameObject.tag))

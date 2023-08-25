@@ -5,20 +5,18 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 public class PlacementIndicator2 : MonoBehaviour
-{
-
+{  
     private ARRaycastManager rayManager;
     [SerializeField]
-    private GameObject visual;
-
+    GameObject visual;
 
     void Start()
     {
         // get the components
         rayManager = FindObjectOfType<ARRaycastManager>();
         visual = transform.GetChild(0).gameObject;
-
         // hide the placement indicator visual
+        
         visual.SetActive(false);
     }
 

@@ -19,7 +19,7 @@ public class CarMoviment : MonoBehaviour
             float verticalInput = joystick.Vertical;
 
             // Calcular o vetor de movimento
-            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.deltaTime;
+            Vector3 movement = moveSpeed * Time.deltaTime * new Vector3(horizontalInput, 0f, verticalInput);
 
             // Mover o objeto
             objectToMove.Translate(movement, Space.World);
