@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CarMoviment : MonoBehaviour
+public class CarMovement : MonoBehaviour
 {
     private Transform objectToMove;
     public float moveSpeed = 5f;

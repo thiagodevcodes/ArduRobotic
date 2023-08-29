@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e7159058bc5f848b9a36b5d08519de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaPeca: JuntaHead
-  isJunto: 0
+  typePart: JuntaHead
+  isJoint: 0
 --- !u!54 &5642744580148818083
 Rigidbody:
   m_ObjectHideFlags: 0

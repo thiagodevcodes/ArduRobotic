@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e7159058bc5f848b9a36b5d08519de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaPeca: JuntaArmEsq
-  isJunto: 0
+  typePart: JuntaArmEsq
+  isJoint: 0
 --- !u!1001 &7985879911668931922
 PrefabInstance:
   m_ObjectHideFlags: 0

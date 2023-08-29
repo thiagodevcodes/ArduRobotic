@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaJunta: JuntaArmEsq
-  isJunto: 0
+  typeJoint: JuntaArmEsq
+  isJoint: 0
 --- !u!1 &9105623305524244232
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaJunta: JuntaLegEsq
-  isJunto: 0
+  typeJoint: JuntaLegEsq
+  isJoint: 0
 --- !u!1 &9105623306405341709
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaJunta: JuntaArmDir
-  isJunto: 0
+  typeJoint: JuntaArmDir
+  isJoint: 0
 --- !u!1 &9105623306517111761
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,8 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaJunta: JuntaLegDir
-  isJunto: 0
+  typeJoint: JuntaLegDir
+  isJoint: 0
 --- !u!1 &9105623306876023106
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,8 +648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDaJunta: JuntaHead
-  isJunto: 0
+  typeJoint: JuntaHead
+  isJoint: 0
 --- !u!1 &9105623307069687579
 GameObject:
   m_ObjectHideFlags: 0
