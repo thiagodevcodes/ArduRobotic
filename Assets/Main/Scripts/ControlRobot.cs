@@ -119,6 +119,18 @@ public class ControlRobot: MonoBehaviour
         }
     }
 
+        public void DestroyAllObjects()
+    {
+        if(objectsInScene.Count > 0)
+        {
+            foreach (GameObject obj in objectsInScene)
+            {
+                Destroy(obj);
+            }
+        }
+    
+    }
+
     //Destruir o objeto que foi tocado duas vezes
     private void DestroyClickedObject()
     {

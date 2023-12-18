@@ -7,7 +7,7 @@ public class JoinParts: MonoBehaviour
     public string typePart;
     private FixedJoint joint;
 
-    [SerializeField] private bool isJoint = false;
+    private GameObject objetoDeColisao;
 
     private readonly HashSet<string> tagsJoints = new()
     {
@@ -30,8 +30,9 @@ public class JoinParts: MonoBehaviour
             Debug.Log(jointConnection.OnPossibleConnect(typePart));
             
             //Se possui o componente, é possível conectar e ainda não está junto segue.
-            if (jointConnection != null && jointConnection.OnPossibleConnect(typePart) && isJoint == false)
+            if (jointConnection != null && jointConnection.OnPossibleConnect(typePart))
             {
+                Debug.Log("Entrou aqui");
                 //Pega o transform do objeto colidido e do objeto atual
                 Transform parentRobot = collision.transform;
                 Transform transformObject = transform;
@@ -43,17 +44,46 @@ public class JoinParts: MonoBehaviour
                 //Inicia o processo de junção
                 joint = transformObject.gameObject.AddComponent<FixedJoint>();
                 joint.connectedBody = otherRigidbody;
-             
-                isJoint = true;
+
+                collision.gameObject.GetComponent<ControlJoints>().isJoint = true;
+                
             }
+        }
+    }
+
+    void OnDestroy()
+    { 
+        Debug.Log("Objeto destruido " + objetoDeColisao.name);
+
+        if (objetoDeColisao != null && objetoDeColisao.name == typePart)
+        {
+            ControlJoints controlJoints = objetoDeColisao.GetComponent<ControlJoints>();
+
+            if (controlJoints != null)
+            {
+                controlJoints.isJoint = false; // Modifique conforme necessário
+            }
+            else
+            {
+                Debug.LogWarning("O componente ControlJoints não foi encontrado no objeto de colisão.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Nenhum objeto de colisão armazenado.");
         }
     }
 
     //Verificar a colisão
     void OnCollisionEnter(Collision collision)
     {
-        if (!isJoint && tagsJoints.Contains(collision.gameObject.tag))
+        if (tagsJoints.Contains(collision.gameObject.tag) && collision.gameObject.GetComponent<ControlJoints>().isJoint == false)
         {
+            if(collision.gameObject.name == typePart)
+            {
+                objetoDeColisao = collision.gameObject;
+            }
+            
             JointPart(collision);
         }
     }

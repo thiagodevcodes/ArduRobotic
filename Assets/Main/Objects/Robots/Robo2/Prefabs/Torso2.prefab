@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeJoint: JuntaArmEsq
-  isJoint: 0
 --- !u!1 &9105623305524244232
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeJoint: JuntaLegEsq
-  isJoint: 0
 --- !u!1 &9105623306405341709
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeJoint: JuntaArmDir
-  isJoint: 0
 --- !u!1 &9105623306517111761
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeJoint: JuntaLegDir
-  isJoint: 0
 --- !u!1 &9105623306876023106
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeJoint: JuntaHead
-  isJoint: 0
 --- !u!1 &9105623307069687579
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9105623307069687578}
   - component: {fileID: 51859529037255743}
+  - component: {fileID: -7559443110666463653}
   m_Layer: 0
   m_Name: Torso2
   m_TagString: ItemSpawn
@@ -701,6 +697,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2531671, y: 0.27474147, z: 0.16901903}
   m_Center: {x: 0.002157405, y: -0.025335342, z: 0.0076337233}
+--- !u!114 &-7559443110666463653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105623307069687579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b7f5c79e136c349a216623f26a37ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeJoint: 
 --- !u!1001 &9105623307034288396
 PrefabInstance:
   m_ObjectHideFlags: 0
